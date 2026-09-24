@@ -1,0 +1,9 @@
+{
+  "name": "app-cloner",
+  "description": "Clone any app's UI, UX and features into a Next.js + Supabase build, end to end: interview → capture the reference → parity specs → phased build → side-by-side QA.",
+  "version": "1.0.0",
+  "author": {
+    "name": "iammesudo"
+  },
+  "keywords": ["clone", "ui", "parity", "nextjs", "supabase", "playwright"]
+}

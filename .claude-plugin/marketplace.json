@@ -1,0 +1,15 @@
+{
+  "name": "iammesudo-plugins",
+  "description": "Personal Claude Code plugins \u2014 app-cloner and more.",
+  "owner": {
+    "name": "iammesudo"
+  },
+  "plugins": [
+    {
+      "name": "app-cloner",
+      "source": "./plugins/app-cloner",
+      "description": "Clone any app's look, feel and features into a Next.js + Supabase build: interview, capture the reference (MCP, URL or screenshots), write parity specs, build in phases, and QA side by side.",
+      "version": "1.0.0"
+    }
+  ]
+}
