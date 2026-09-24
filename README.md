@@ -12,24 +12,36 @@ Clone any app's look, feel and features into a **Next.js + Tailwind + shadcn/ui 
 
 It runs fully automatically after the interview.
 
-### Install (once)
+### Install (once per computer)
 
-In Claude Code (terminal on your PC, or any session):
+Installing is account-wide, not per project: it's saved in your user settings (`C:\Users\<you>\.claude\` on Windows, `~/.claude/` on Mac/Linux) and then works in **every** project. So you can run it from any folder.
 
-```
-/plugin marketplace add iammesudo/claude-plugins
-/plugin install app-cloner@iammesudo-plugins
-```
+1. Open a terminal in any folder and start Claude Code: `claude`
+2. Inside Claude Code:
+   ```
+   /plugin marketplace add iammesudo/claude-plugins
+   /plugin install app-cloner@iammesudo-plugins
+   ```
+3. `/exit`, then start `claude` again so the plugin loads. Check with `/plugin` → it should list `app-cloner` as enabled.
 
-Then restart Claude Code (or start a new session).
+**"Not found" or an authentication error in step 2?** This repo is private, so your computer's git must be logged in to GitHub: run `gh auth login` (or set up Git Credential Manager), then retry. Or make the repo public (Settings → General → Danger Zone → Change visibility) — it contains no secrets.
+
+> Installing inside a Claude Code **cloud** session only lasts for that session. For cloud sessions, use the `.claude/settings.json` snippet below in the repo you work on.
 
 ### Use
 
+Open Claude Code **in the folder of the project the clone should be built in** — an existing repo to extend, or a new empty folder for a brand-new app. That's where it writes `docs/clone/…` and the code. Then say:
+
 ```
-/app-cloner:clone-app Clone Notion's page editor into this repo
+clone Notion's page editor into this project
 ```
 
-or just say "clone <app> into this project" — the skill triggers on "clone / replicate / make it exactly like …".
+or run `/app-cloner:clone-app <what to clone>`. It triggers on "clone / replicate / make it exactly like …".
+
+What happens next:
+- It asks its questions once (2–3 rounds), then runs fully automatically.
+- If the original can only be reached on your computer (a desktop app, a logged-in account, a local MCP like `tradingview-mcp`), it gives you a prompt to paste into Claude Code on that computer; it keeps building meanwhile and uses your screenshots when you've pushed them.
+- It commits and pushes after every phase and ends with a summary of what matches, what was skipped, and anything you must do (e.g. run a SQL file in Supabase).
 
 ### Always available in a repo's cloud sessions
 
